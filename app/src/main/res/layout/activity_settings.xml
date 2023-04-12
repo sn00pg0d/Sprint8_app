@@ -11,72 +11,56 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/pad16"
+            android:layout_marginBottom="24dp"
             android:orientation="vertical">
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:paddingStart="64dp"
+                android:layout_marginStart="48dp"
                 android:text="@string/button3"
                 android:textSize="22sp"
                 android:textColor="@color/black"
                 tools:ignore="RtlSymmetry"/>
 
         <ImageView
+                android:contentDescription="@string/app_name"
                 android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="16dp"
                 android:layout_gravity="center_vertical"
                 android:backgroundTint="@color/white"
-                android:minWidth="24dp"
-                android:minHeight="24dp"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/arrow_back"
                 app:iconTint="@color/black"
                 tools:ignore="RtlSymmetry"/>
     </FrameLayout>
 
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="28dp">
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingStart="16dp"
-                android:layout_gravity="center_vertical"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
-                android:fontFamily="sans-serif-smallcaps"
-                android:text="@string/black_theme"
-                android:textSize="16sp"
-                android:textAllCaps="false"
-                tools:ignore="RtlCompat,RtlSymmetry"/>
-
-        <Switch
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_gravity="end"
-                android:minWidth="56dp"
-                android:minHeight="48dp"
-                tools:ignore="UseSwitchCompatOrMaterialXml"/>
-    </FrameLayout>
-
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pad16"
             android:orientation="vertical">
 
-        <Button
-                app:icon="@drawable/share"
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SwitchCompat
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="end"
+                    android:paddingVertical="@dimen/pad21"
+                    android:text="@string/blackThemeSwitcher"
+                    android:textSize="@dimen/text16"/>
+        </FrameLayout>
+
+        <TextView
+                app:drawableEndCompat="@drawable/share"
+                android:paddingVertical="@dimen/pad21"
                 app:iconGravity="end"
-                app:minWidth="24dp"
-                app:minHeight="24dp"
                 app:iconTint="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,16 +70,16 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/share_it"
                 android:textAlignment="textStart"
-                android:textSize="16sp"
+                android:textSize="@dimen/text16"
                 android:textAllCaps="false"
                 tools:ignore="MissingConstraints,RtlCompat"
                 />
 
-        <Button
+        <TextView
                 app:icon="@drawable/support"
+                android:paddingVertical="@dimen/pad21"
+                app:drawableEndCompat="@drawable/support"
                 app:iconGravity="end"
-                app:minWidth="24dp"
-                app:minHeight="24dp"
                 app:iconTint="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,16 +89,16 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/support_please"
                 android:textAlignment="textStart"
-                android:textSize="16sp"
+                android:textSize="@dimen/text16"
                 android:textAllCaps="false"
                 tools:ignore="MissingConstraints,RtlCompat"
                 />
 
-        <Button
+        <TextView
                 app:icon="@drawable/user_arrow"
                 app:iconGravity="end"
-                app:minWidth="24dp"
-                app:minHeight="24dp"
+                android:paddingVertical="@dimen/pad21"
+                app:drawableEndCompat="@drawable/user_arrow"
                 app:iconTint="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +108,7 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/user_agreement"
                 android:textAlignment="textStart"
-                android:textSize="16sp"
+                android:textSize="@dimen/text16"
                 android:textAllCaps="false"
                 tools:ignore="MissingConstraints,RtlCompat"
                 />
