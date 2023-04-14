@@ -10,4 +10,6 @@
     <string name="user_agreement">Пользовательское соглашение</string>
     <string name="media">Медиатека</string>
     <string name="search">Поиск</string>
+    <string name="blackThemeSwitcher">Темная тема</string>
+
 </resources>
