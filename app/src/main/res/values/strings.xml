@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sprint8_app</string>
+    <string name="app_name">Sprint8+9_app</string>
     <string name="button3">Настройки</string>
     <string name="button2">Медиатека</string>
     <string name="button1">Поиск</string>
@@ -11,5 +11,6 @@
     <string name="media">Медиатека</string>
     <string name="search">Поиск</string>
     <string name="blackThemeSwitcher">Темная тема</string>
+    <string name="practicum_web">https://practicum.yandex.ru/android-developer</string>
 
 </resources>

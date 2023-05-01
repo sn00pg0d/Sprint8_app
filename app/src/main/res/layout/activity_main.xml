@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+        style="@style/LinearStyle"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@color/blue"
         tools:context=".MainActivity"
         android:orientation="vertical">
 
@@ -14,81 +14,43 @@
             android:layout_height="wrap_content">
 
         <TextView
+                style="@style/TextViewStyle"
+                android:textColor="?attr/colorPrimaryVariant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/pad16"
+                android:paddingVertical="@dimen/pad16"
                 android:paddingStart="@dimen/pad16"
-                android:paddingBottom="@dimen/pad16"
                 android:text="@string/Title"
-                android:textSize="22sp"
-                android:textColor="@color/white"
                 tools:ignore="RtlSymmetry"/>
     </LinearLayout>
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/black"
             android:orientation="vertical"
             android:layout_marginBottom="@dimen/space28"
             android:layout_marginHorizontal="@dimen/pad16">
 
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/buttonSearch"
-                android:layout_width="match_parent"
-                android:layout_marginTop="24dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"
                 app:icon="@drawable/search"
-                app:iconGravity="textStart"
-                app:iconPadding="10dp"
-                app:iconTint="@color/black"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 android:text="@string/button1"
-                android:fontFamily="casual"
-                android:textSize="@dimen/text22"
-                android:textAllCaps="false"
-                app:cornerRadius="@dimen/r16"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginTop="28dp"
                 tools:ignore="MissingConstraints"/>
 
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/buttonMedia"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
                 app:icon="@drawable/library"
-                app:iconGravity="textStart"
-                app:iconPadding="10dp"
-                app:iconTint="@color/black"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 android:text="@string/button2"
-                android:fontFamily="casual"
-                android:textSize="@dimen/text22"
-                android:textAllCaps="false"
-                app:cornerRadius="@dimen/r16"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 tools:ignore="MissingConstraints"/>
 
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/settings"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
                 app:icon="@drawable/settings"
-                app:iconGravity="textStart"
-                app:iconPadding="10dp"
-                app:iconTint="@color/black"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:text="@string/button3"
-                android:fontFamily="casual"
-                android:textSize="@dimen/text22"
-                android:textAllCaps="false"
-                app:cornerRadius="@dimen/r16"
                 tools:ignore="MissingConstraints"
                 />
     </LinearLayout>
