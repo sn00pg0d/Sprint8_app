@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="app_name">Sprint8+9_app</string>
+    <string name="button3">Настройки</string>
+    <string name="button2">Медиатека</string>
+    <string name="button1">Поиск</string>
+    <string name="Title">Playlist maker</string>
+    <string name="black_theme">Темная тема</string>
+    <string name="share_it">Поделиться приложением</string>
+    <string name="support_please">Написать в поддержку</string>
+    <string name="user_agreement">Пользовательское соглашение</string>
+    <string name="media">Медиатека</string>
+    <string name="search">Поиск</string>
+    <string name="blackThemeSwitcher">Темная тема</string>
+    <string name="practicum_web">https://practicum.yandex.ru/android-developer</string>
+    <string name="email">madmaks.45cal@gmail.com</string>
+    <string name="tema">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="tekst">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="oferta_web">https://yandex.ru/legal/practicum_offer/</string>
 </resources>

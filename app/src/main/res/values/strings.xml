@@ -12,5 +12,9 @@
     <string name="search">Поиск</string>
     <string name="blackThemeSwitcher">Темная тема</string>
     <string name="practicum_web">https://practicum.yandex.ru/android-developer</string>
-
+    <string name="email">madmaks.45cal@gmail.com</string>
+    <string name="tema">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="tekst">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="oferta_web">https://yandex.ru/legal/practicum_offer/</string>
+    <string name="back_from_search">Назад в главное меню</string>
 </resources>

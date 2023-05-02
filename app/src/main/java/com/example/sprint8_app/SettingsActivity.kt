@@ -25,28 +25,23 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         shareButton.setOnClickListener {
-            val practicumWeb = "https://practicum.yandex.ru/android-developer/"
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.setType("text/plain")
-            shareIntent.putExtra(Intent.EXTRA_TEXT, practicumWeb)
+            shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.practicum_web))
             startActivity(Intent.createChooser(shareIntent, "Шарим нашу приложуху"))
         }
 
         supportButton.setOnClickListener {
-            val email = "madmaks.45cal@gmail.com"
-            val tema = "Сообщение разработчикам и разработчицам приложения Playlist Maker"
-            val tekst = "Спасибо разработчикам и разработчицам за крутое приложение!"
-
             val shareIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:").buildUpon().appendQueryParameter("to", email)
-                    .appendQueryParameter("subject", tema).appendQueryParameter("body", tekst).build()
+                data = Uri.parse("mailto:").buildUpon().appendQueryParameter("to", getString(R.string.email))
+                    .appendQueryParameter("subject", getString(R.string.tema))
+                    .appendQueryParameter("body", getString(R.string.tekst)).build()
             }
             startActivity(shareIntent)
         }
 
         userAgreementButton.setOnClickListener {
-            val practicumWeb = Uri.parse("https://yandex.ru/legal/practicum_offer/")
-            val agreeIntent = Intent(Intent.ACTION_VIEW, practicumWeb)
+            val agreeIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.oferta_web)))
             startActivity(agreeIntent)
         }
 

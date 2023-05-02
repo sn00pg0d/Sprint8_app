@@ -18,6 +18,7 @@
                 android:exported="false"/>
         <activity
                 android:name=".SearchAct"
+
                 android:exported="false"/>
         <activity
                 android:name=".MediaAct"
