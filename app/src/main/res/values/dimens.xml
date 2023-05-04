@@ -7,5 +7,6 @@
     <dimen name="text16">16sp</dimen>
     <dimen name="text22">22sp</dimen>
     <dimen name="pad12">12dp</dimen>
+    <dimen name="back_button24">24dp</dimen>
 
 </resources>

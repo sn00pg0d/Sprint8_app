@@ -3,7 +3,6 @@ package com.example.sprint8_app
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,12 +16,6 @@ class SettingsActivity : AppCompatActivity() {
         val shareButton: TextView = findViewById(R.id.share_button)
         val supportButton: TextView = findViewById(R.id.support_button)
         val userAgreementButton: TextView = findViewById(R.id.user_agreement_button)
-        val searchButton: Button = findViewById(R.id.buttonSearch)
-
-        searchButton.setOnClickListener {
-            val displayIntent = Intent(Intent(this, SearchAct::class.java))
-            startActivity(displayIntent)
-        }
 
         shareButton.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)

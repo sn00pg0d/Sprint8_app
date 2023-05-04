@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
-        <item name="android:src">@drawable/arrow_back_dark</item>
+        <item name="colorPrimaryContainer">@color/search_pad</item>
+        <item name="colorSecondaryContainer">@color/icons_in_settings</item>
     </style>
 </resources>

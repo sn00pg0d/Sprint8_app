@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#3772E7</color>
     <color name="light_gray">#E6E8EB</color>
+    <color name="search_pad">#E6E8EB</color>
     <color name="gray">#8A8A8A</color>
     <color name="hintColor">#616161</color>
+    <color name="icons_in_settings">#AEAFB4</color>
 </resources>
