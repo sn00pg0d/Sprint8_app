@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,5 +28,8 @@ class MainActivity : AppCompatActivity() {
             val displayIntent = Intent(this, SettingsActivity::class.java)
             startActivity(displayIntent)
         }
+        //ночная тема вкл
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
     }
 }

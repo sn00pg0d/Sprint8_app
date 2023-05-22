@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         tools:context=".SearchAct">
 
-    <TextView
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/search"
-            android:gravity="center"
-            android:textSize="64sp"
-            android:textColor="@color/black">
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
 
-    </TextView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+                style="@style/ImageViewStyle"
+                android:contentDescription="@string/app_name"
+                android:id="@+id/back_button"
+                android:layout_width="@dimen/back_button24"
+                android:layout_height="@dimen/back_button24"
+                android:layout_marginStart="@dimen/pad16"
+                android:layout_gravity="center_vertical"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/arrow_back_black_24dp"
+                tools:ignore="RtlSymmetry"/>
+
+        <TextView
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="24dp"
+                android:text="@string/search"
+                android:textSize="22sp"
+                android:textColor="?attr/colorOnPrimary"
+                tools:ignore="RtlSymmetry"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <EditText
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_marginVertical="8dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/search"
+                app:iconGravity="start"
+                android:layout_marginHorizontal="@dimen/pad16"
+                android:inputType="text"
+                app:drawableStartCompat="@drawable/search"
+                android:drawableTint="@color/gray"
+                android:hint="@string/search"
+                android:maxLines="1"
+                android:paddingStart="@dimen/pad16"
+                android:textAlignment="textStart"
+                android:maxLength="32"
+                android:drawablePadding="8dp"
+                android:textColor="?attr/colorPrimary"
+                android:textColorHint="@color/hintColor"
+                android:background="@drawable/rectangle_edittext"/>
+
+        <ImageView
+                android:id="@+id/clear_button"
+                android:layout_width="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:paddingEnd="30dp"
+                android:src="@drawable/clear_button"
+                android:visibility="gone"/>
+    </FrameLayout>
+</LinearLayout>
