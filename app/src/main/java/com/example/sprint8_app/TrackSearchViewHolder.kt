@@ -13,7 +13,7 @@ class SongsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val trackTime: TextView = itemView.findViewById(R.id.timeTV)
     private val coverUrl: ImageView = itemView.findViewById(R.id.coverTV)
 
-    fun bind(model: TrackAct) {
+    fun bind(model: Track) {
         artistName.text = model.artistName
         trackName.text = model.trackName
         trackTime.text = model.trackTime
