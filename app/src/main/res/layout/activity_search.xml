@@ -6,6 +6,7 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
+        android:background="?attr/colorSecondaryVariant"
         tools:context=".SearchAct">
 
     <LinearLayout
@@ -16,7 +17,6 @@
 
         <ImageView
                 style="@style/ImageViewStyle"
-                android:contentDescription="@string/app_name"
                 android:id="@+id/back_button"
                 android:layout_width="@dimen/back_button24"
                 android:layout_height="@dimen/back_button24"
@@ -75,4 +75,12 @@
                 android:src="@drawable/clear_button"
                 android:visibility="gone"/>
     </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playlistRV"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"/>
 </LinearLayout>

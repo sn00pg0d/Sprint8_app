@@ -8,5 +8,10 @@
     <dimen name="text22">22sp</dimen>
     <dimen name="pad12">12dp</dimen>
     <dimen name="back_button24">24dp</dimen>
+    <dimen name="pad8">8dp</dimen>
+    <dimen name="text18">18sp</dimen>
+    <dimen name="text11">11sp</dimen>
+    <dimen name="corners8dp">8dp</dimen>
+    <dimen name="cover45dp">45dp</dimen>
 
 </resources>

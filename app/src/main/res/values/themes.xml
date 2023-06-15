@@ -8,11 +8,24 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue</item>
         <item name="colorSecondaryVariant">@color/white</item>
-        <item name="colorOnSecondary">@color/gray</item>
+        <item name="colorOnSecondary">@color/icons_in_settings</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/blue</item>
         <!-- Customize your theme here. -->
         <item name="colorPrimaryContainer">@color/search_pad</item>
         <item name="colorSecondaryContainer">@color/icons_in_settings</item>
+    </style>
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+    <style name="cardColors" parent="">
+        <item name="android:backgroundTint">?attr/colorSecondaryVariant</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+    <style name="cardColorsBottom" parent="">
+        <item name="backgroundColor">?attr/colorSecondaryVariant</item>
+        <item name="android:textColor">?attr/colorSecondaryContainer</item>
+        <item name="android:textSize">@dimen/text11</item>
     </style>
 </resources>
