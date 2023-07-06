@@ -21,10 +21,12 @@
     <TextView
             style="@style/cardColors"
             android:id="@+id/songTV"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="66dp"
+            android:layout_marginEnd="48dp"
             android:paddingBottom="@dimen/pad16"
+            android:singleLine="true"
             android:layout_gravity="center_vertical"
             android:textSize="@dimen/text16"
             tools:text="Track Name"/>
@@ -32,14 +34,18 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:paddingStart="66dp"
-            android:paddingTop="@dimen/pad16"
+            android:paddingTop="@dimen/pad21"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
         <TextView
                 style="@style/cardColorsBottom"
                 android:id="@+id/artistTV"
+                android:singleLine="true"
+                android:maxLength="32"
+                android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Artist name"/>
@@ -48,16 +54,18 @@
                 style="@style/cardColorsBottom"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
                 android:paddingHorizontal="5dp"
                 android:src="@drawable/ellipse"/>
 
         <TextView
                 style="@style/cardColorsBottom"
                 android:id="@+id/timeTV"
+                android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="0:00"/>
-    </LinearLayout>
+</LinearLayout>
 
     <ImageView
             android:layout_width="wrap_content"

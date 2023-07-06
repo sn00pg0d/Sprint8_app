@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sprint8+9_app</string>
     <string name="button3">Настройки</string>
@@ -17,5 +18,11 @@
     <string name="tekst">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="oferta_web">https://yandex.ru/legal/practicum_offer/</string>
     <string name="back_from_search">Назад в главное меню</string>
+    <string name="not_found">По Вашему запросу ничего не найдено</string>
+    <string name="server_offline">На сервере произошла ошибка</string>
+    <string name="refresh">ОБНОВИТЬ</string>
+    <string name="retry_bad_search"> не найден.\nИзмените искомый запрос</string>
+    <string name="check_net">"Проверьте соединение с Интернет"</string>
+
 
 </resources>
