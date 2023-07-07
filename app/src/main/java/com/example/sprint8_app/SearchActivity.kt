@@ -7,10 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
@@ -22,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class SearchActivity : AppCompatActivity() {
 
     companion object {
-        const val SEARCH_TEXT = "SearchText"
+        private const val SEARCH_TEXT = "SearchText"
     }
 
     private val iTunesBaseUrl = "https://itunes.apple.com/"
@@ -44,6 +41,8 @@ class SearchActivity : AppCompatActivity() {
         val backButton = findViewById<ImageView>(R.id.back_button)
         val notFoundPlaceholder: ImageView = findViewById<ImageView>(R.id.not_found_placeholder)
         val serverErrorPlaceholder: ImageView = findViewById<ImageView>(R.id.server_error_placeholder)
+        val notFoundText:TextView = findViewById<TextView>(R.id.not_found_text)
+        val serverErrorText: TextView = findViewById<TextView>(R.id.server_error_text)
         val refreshButton: Button = findViewById(R.id.refresh_button)
         val recyclerView = findViewById<RecyclerView>(R.id.playlistRV)
 
@@ -81,18 +80,25 @@ class SearchActivity : AppCompatActivity() {
                             }
                             if (tracks.isEmpty()) {
                                 showMessage(getString(R.string.not_found), getString(R.string.not_found))
+                                notFoundText.visibility = allStuffVisibility(true)
                                 notFoundPlaceholder.visibility = allStuffVisibility(true)
+                                serverErrorText.visibility = allStuffVisibility(false)
+                                serverErrorPlaceholder.visibility = allStuffVisibility(false)
+                                refreshButton.visibility = allStuffVisibility(false)
                             }
 
                         } else {
                             showMessage(getString(R.string.server_offline), response.code().toString())
+                            serverErrorText.visibility = allStuffVisibility(true)
+                            notFoundText.visibility = allStuffVisibility(false)
                             refreshButton.visibility = allStuffVisibility(true)
                             serverErrorPlaceholder.visibility = allStuffVisibility(true)
                         }
                     }
 
                     override fun onFailure(call: Call<TrackResponse>, t: Throwable) {
-                        showMessage(getString(R.string.server_offline), t.message.toString())
+                        serverErrorText.visibility = allStuffVisibility(true)
+                        notFoundText.visibility = allStuffVisibility(false)
                         notFoundPlaceholder.visibility = allStuffVisibility(false)
                         refreshButton.visibility = allStuffVisibility(true)
                         serverErrorPlaceholder.visibility = allStuffVisibility(true)
@@ -121,7 +127,10 @@ class SearchActivity : AppCompatActivity() {
             refreshButton.visibility = allStuffVisibility(false)
             recyclerView.visibility = allStuffVisibility(false)
             notFoundPlaceholder.visibility = allStuffVisibility(false)
+            notFoundText.visibility = allStuffVisibility(false)
             serverErrorPlaceholder.visibility = allStuffVisibility(false)
+            serverErrorText.visibility = allStuffVisibility(false)
+
         }
 
         val simpleTextWatcher = object : TextWatcher {
@@ -152,6 +161,8 @@ class SearchActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.playlistRV)
         val resetSearch = findViewById<ImageView>(R.id.clear_button)
         val refreshButton: Button = findViewById(R.id.refresh_button)
+        val serverErrorText: TextView = findViewById<TextView>(R.id.server_error_text)
+        val notFoundText:TextView = findViewById<TextView>(R.id.not_found_text)
         val notFoundPlaceholder: ImageView = findViewById<ImageView>(R.id.not_found_placeholder)
         val serverErrorPlaceholder: ImageView = findViewById<ImageView>(R.id.server_error_placeholder)
         itunesService.searchTracks(inputSearch.text.toString()).enqueue(object : Callback<TrackResponse> {
@@ -164,26 +175,35 @@ class SearchActivity : AppCompatActivity() {
                         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         imm.hideSoftInputFromWindow(resetSearch.windowToken, 0)
                         refreshButton.visibility = allStuffVisibility((false))
+                        serverErrorText.visibility = allStuffVisibility(false)
                         notFoundPlaceholder.visibility = allStuffVisibility(false)
                         serverErrorPlaceholder.visibility = allStuffVisibility(false)
                         adapter.notifyDataSetChanged()
                     } else {
                         tracks.clear()
                         recyclerView.visibility = allStuffVisibility(false)
+                        notFoundText.visibility = allStuffVisibility(true)
                         notFoundPlaceholder.visibility = allStuffVisibility(true)
+                        refreshButton.visibility = allStuffVisibility(false)
+                        serverErrorText.visibility = allStuffVisibility(false)
                         serverErrorPlaceholder.visibility = allStuffVisibility(false)
                     }
                 } else {
                     tracks.clear()
+                    serverErrorText.visibility = allStuffVisibility(true)
+                    notFoundPlaceholder.visibility = allStuffVisibility(false)
+                    refreshButton.visibility = allStuffVisibility(true)
+                    serverErrorPlaceholder.visibility = allStuffVisibility(true)
                     Toast.makeText(applicationContext, R.string.check_net, Toast.LENGTH_LONG).show()
-                    recyclerView.visibility = allStuffVisibility(false)
 
                 }
             }
 
             override fun onFailure(call: Call<TrackResponse>, t: Throwable) {
                 tracks.clear()
+                serverErrorText.visibility = allStuffVisibility(true)
                 notFoundPlaceholder.visibility = allStuffVisibility(false)
+                refreshButton.visibility = allStuffVisibility(true)
                 serverErrorPlaceholder.visibility = allStuffVisibility(true)
                 Toast.makeText(applicationContext, R.string.check_net, Toast.LENGTH_LONG).show()
             }
