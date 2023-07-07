@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity() {
         val settingsButton = findViewById<Button>(R.id.settings)
 
         searchButton.setOnClickListener {
-            val displayIntent = Intent(this, SearchAct::class.java)
+            val displayIntent = Intent(this, SearchActivity::class.java)
             startActivity(displayIntent)
         }
 
         mediaButton.setOnClickListener {
-            val displayIntent = Intent(this, MediaAct::class.java)
+            val displayIntent = Intent(this, MediaActivity::class.java)
             startActivity(displayIntent)
         }
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             val displayIntent = Intent(this, SettingsActivity::class.java)
             startActivity(displayIntent)
         }
-        //ночная тема вкл
+        //Dark theme by system
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
     }

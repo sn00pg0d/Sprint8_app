@@ -7,7 +7,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:background="?attr/colorSecondaryVariant"
-        tools:context=".SearchAct">
+        tools:context=".SearchActivity">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -42,6 +42,7 @@
     <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/pad16"
             android:orientation="horizontal">
 
         <EditText
@@ -57,6 +58,8 @@
                 android:drawableTint="@color/gray"
                 android:hint="@string/search"
                 android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
                 android:paddingStart="@dimen/pad16"
                 android:textAlignment="textStart"
                 android:maxLength="32"
@@ -78,9 +81,73 @@
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/playlistRV"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/not_found_placeholder"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/not_found"
+            android:src="@drawable/not_found"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/not_found_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/not_found"
+            android:fontFamily="@font/ys_display_medium"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/text19"
+            android:textAlignment="center"
+            android:visibility="gone"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/server_error_placeholder"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/server_offline"
+            android:src="@drawable/server_error"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/server_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/server_offline"
+            android:fontFamily="@font/ys_display_medium"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/text19"
+            android:textAlignment="center"
+            android:visibility="gone"/>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/refresh_button"
+            android:layout_marginVertical="@dimen/pad16"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:cornerRadius="25dp"
+            android:letterSpacing="0"
+            android:layout_gravity="center"
+            android:fontFamily="@font/ys_display_medium"
+            android:textFontWeight="500"
+            android:lineHeight="@dimen/text16"
+            android:textSize="@dimen/text14"
+            android:textColor="?attr/colorSecondaryVariant"
+            android:backgroundTint="?attr/colorOnPrimary"
+            android:textAllCaps="false"
+            android:text="@string/refresh"
+            android:textAlignment="center"/>
+
 </LinearLayout>

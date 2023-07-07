@@ -18,11 +18,11 @@
                 android:name=".SettingsActivity"
                 android:exported="false"/>
         <activity
-                android:name=".SearchAct"
+                android:name=".SearchActivity"
 
                 android:exported="false"/>
         <activity
-                android:name=".MediaAct"
+                android:name=".MediaActivity"
                 android:exported="false"/>
         <activity
                 android:name=".MainActivity"
